@@ -1,0 +1,32 @@
+//- FUNCTIONS
+mixin navigation() 
+  ul.nav__menu
+    - navArguments = Array.prototype.slice.call(arguments);
+    for menuItem in navArguments
+      li.nav__item
+        a.nav__anchor(href="#{menuItem.toLowerCase()}")= menuItem
+
+//- HTML
+header#about.header
+  .header__welcome
+    h1.header__title WELCOME
+    h2.header__subtitle TO THE FAMILY BUSINESS
+  .header__arrow
+    img(src="images/arrow.png", alt="Scroll down arrow")
+
+.nav  
+  .row
+    .nav__logo.col-3.col-m-6
+      img(src="images/logo.png", alt="Kindred group logo")
+    .col-6.u-hide
+      + navigation("About", "Services", "Members", "Contact")
+      
+      .col-3.col-m-6
+        .submenu
+          p MENU
+          
+          .submenu__burger
+            - i = 0
+            while i < 3
+              span.submenu__line
+              - i++

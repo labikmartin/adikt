@@ -1,0 +1,22 @@
+//- FUNCTIONS
+mixin slider(index)
+  .col-12
+    h2.slider__subtitle KINDRED MEANS
+    h1.slider__title
+      if index === 1
+        | INTEGRATION
+      else
+        | #{index}
+    h2.u-description
+      | We integrate all the complexities of the
+      br
+      | digital world into one group.
+
+//- HTML    
+section.slider.u-pageSection
+  .container  
+    .row.slick
+      - i = 0
+      while i < 5
+        + slider(i)
+        - i++
