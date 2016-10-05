@@ -1,0 +1,372 @@
+// ------------------ VARIABLES -
+
+$red: #e30613;
+$hoverRed: #cc0511;
+$gray: #e5e5e5;
+$gothamBold: 'GothamCEBold';
+$gothamLight: 'GothamLight';
+$gothamBook: 'GothamCEBook';
+
+
+// ------------------ MIXINS -
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin center($top) {
+  position: absolute;
+  top: $top;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+// ------------------ GRID -
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 40px;
+}
+
+
+// ------------------ FONTS
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url("webfonts/gotham-light.eot");
+  src: url("webfonts/gotham-light.eot") format("embedded-opentype"), url("webfonts/gotham-light.woff") format("woff"), url("webfonts/gotham-light.ttf") format("truetype"), url("webfonts/gotham-light.svg#GothamLight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamCEBold';
+  src: url("webfonts/gothabol-webfont.eot");
+  src: url("webfonts/gothabol-webfont.eot?#iefix") format("embedded-opentype"), url("webfonts/gothabol-webfont.woff") format("woff"), url("webfonts/gothabol-webfont.ttf") format("truetype"), url("webfonts/gothabol-webfont.svg#gothamboldcebold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothamCEBook';
+  src: url("webfonts/gothaboo-webfont.eot");
+  src: url("webfonts/gothaboo-webfont.eot?#iefix") format("embedded-opentype"), url("webfonts/gothaboo-webfont.woff") format("woff"), url("webfonts/gothaboo-webfont.ttf") format("truetype"), url("webfonts/gothaboo-webfont.svg#gothambookcebook") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// ------------------ GLOBAL
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include size(100%, 100%);
+}
+
+body {
+  @extend html;
+}
+
+h1 {
+  font-family: $gothamBold;
+  font-size: 72px;
+}
+
+h2 {
+  font-family: $gothamLight;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.section-size {
+  width: 100%;
+  padding-top: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.description {
+  padding-top: 25px;
+}
+
+
+// ------------------ HEADER
+
+header {
+  @extend html;
+  display: table;
+  background: url("../images/header-bg.jpg") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+
+  h1 {
+    font-size: 120px;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+
+  #welcome {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  #arrow {
+    @include size(57px, 57px);
+    @include center(0);
+    display: table-cell;
+    vertical-align: bottom;
+    margin-bottom: 60px;
+    cursor: pointer;
+  }
+
+}
+
+
+// ------------------ NAVIGATION
+
+nav {
+  width: 100%;
+  text-align: left;
+  position: fixed;
+  top: 0;
+  color: #fff;
+  z-index: 999;
+
+  a {
+    color: #fff;
+  }
+
+  .hover a {
+    color: $red;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .logo {
+    font-family: $gothamBold;
+    font-size: 18px;
+  }
+
+  .menu {
+    float: right;
+    font-family: $gothamBook;
+    font-size: 18px;
+
+    p {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  .collapse {
+    display: inline-block;
+
+    .burger {
+      @include size(20px, 3px);
+      display: block;
+      margin-bottom: 3px;
+      margin-left: 5px;
+      background-color: #fff;
+    }
+  }
+
+  .links {
+    font-family: $gothamBook;
+    font-size: 18px;
+    text-align: center;
+
+    li {
+      display: inline;
+      padding: 0 20px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .nav-padding {
+    padding: 25px 40px;
+  }
+
+}
+
+
+// ------------------ SLIDER
+
+#slider {
+  background-color: $red;
+  color: #fff;
+
+  h1 {
+    padding-top: 55.5px;
+  }
+
+  .burger {
+    background-color: #fff;
+  }
+
+  .description {
+    padding-bottom: 156px;
+  }
+
+}
+
+
+// ------------------ CONTENT
+
+#content {
+  color: $red;
+
+  .description {
+    color: #000;
+  }
+
+  .members {
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    margin-left: 0;
+    margin-bottom: -1px;
+  }
+
+  .member-logo {
+    @include size(50%, 200px);
+    display: inline-block;
+    vertical-align: middle;
+    background-position: 50px center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+  }
+
+  .member-description {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-family: $gothamBook;
+    font-size: 18px;
+    color: #000;
+    line-height: 24px;
+  }
+
+  #logo1 {background-image: url("../images/members/member1.png");}
+  #logo2 {background-image: url("../images/members/member2.png");}
+  #logo3 {background-image: url("../images/members/member3.png");}
+  #logo4 {background-image: url("../images/members/member4.png");}
+  #logo5 {background-image: url("../images/members/member5.png");}
+  #logo6 {background-image: url("../images/members/member6.png");}
+  #logo7 {background-image: url("../images/members/member7.png");}
+  #logo8 {background-image: url("../images/members/member8.png");}
+  #logo9 {background-image: url("../images/members/member9.png");}
+  #logo10 {background-image: url("../images/members/member10.png");}
+
+}
+
+
+// ------------------ FOOTER -
+
+footer {
+  width: 100%;
+  margin-top: 60px;
+  font-family: $gothamBook;
+  font-size: 18px;
+  text-align: center;
+  background-color: $red;
+  color: #fff;
+
+  h1 {
+    padding-top: 40px;
+  }
+
+  h2 {
+    padding-bottom: 40px;
+  }
+
+  .footer-heading {
+    font-size: 36px;
+    padding: 0;
+    text-align: left;
+  }
+
+  .bold {
+    font-family: $gothamBold;
+  }
+
+  p {
+    line-height: 24px;
+    padding-top: 20px;
+    text-align: left;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .social-wrap {
+    margin-top: 50px;
+    margin-bottom: 90px;
+    border: solid 1px $hoverRed;
+
+    &:hover {
+      background-color: $hoverRed;
+    }
+  }
+
+  .social {
+    padding: 0;
+    display: inline-block;
+    font-size: 30px;
+  }
+
+  span {
+    background: url("../images/social.png") no-repeat;
+    display: inline-block;
+  }
+
+ .fb {
+    @include size(12px, 25px);
+  }
+
+  .in {
+     @include size(25px, 25px);
+     background-position: 0 -54px;
+   }
+
+}
+
+@import "responsive";
