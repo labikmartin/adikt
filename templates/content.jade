@@ -16,18 +16,18 @@ mixin makeMembers(offset, limit)
       .member
         div(id="logo#{i+1}", class="member__logo" )
         .member__description= members[i].description
-  - }   
+  - }
 
 .content.u-pageSection
   .container
     .row
       .col-12
-        h1 PROUD MEMBERS
-        h2.u-description 
+        h1.content__sectionHeading PROUD MEMBERS
+        h2.u-description
           | And we are really proud to have
           br
           | them in our special family
-      
+
     .row
       .col-6.col-s-12
         + makeMembers(0, 5)
