@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  @include size(100%, 100%);
+}
+
+body {
+  @extend html;
+}
+
+h1 {
+  font-family: $gothamBold;
+  font-size: 72px;
+}
+
+h2 {
+  padding-top: 25px;
+  font-family: $gothamLight;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+footer {
+
+  p {
+  	line-height: 24px;
+  	padding-top: 20px;
+  	text-align: left;
+  }
+
+  a {color: $white;}
+}
+
+// ----- GRID NORMALIZE
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*="col-"] {
+  padding: 40px;
+  float: left;
+}
+
+.container {
+  max-width: 1200px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+// ----- SPECIAL CLASSES
+.fixed a {
+  color: $red;
+
+  &:hover {
+    color: $black;
+  }
+}

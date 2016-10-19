@@ -1,0 +1,57 @@
+.footer {
+  width: 100%;
+  margin-top: 60px;
+  font-family: $gothamBook;
+  font-size: 18px;
+  text-align: center;
+  background-color: $red;
+  color: $white;
+
+  &__heading {
+    padding-top: 40px;
+  }
+
+  &__subtitle {
+    padding-bottom: 40px;
+  }
+} //end footer
+
+.contactBox {
+
+  &__title {
+    font-size: 36px;
+    padding: 0;
+    text-align: left;
+  }
+
+}
+
+.social {
+  margin-top: 50px;
+  margin-bottom: 90px;
+  border: solid 1px $darkRed;
+
+  &:hover {
+    background-color: $darkRed;
+  }
+
+  &__network {
+    padding: 0;
+    display: inline-block;
+    font-size: 30px;
+  }
+
+  &__logo {
+    display: inline-block;
+    background: url("../images/social.png") no-repeat;
+
+    &--fb {
+      @include size(12px, 25px);
+    }
+
+    &--in {
+      @include size(25px, 25px);
+      background-position: 0 -54px;
+    }
+  } // end logo
+}// end social

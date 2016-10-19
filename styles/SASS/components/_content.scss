@@ -1,0 +1,38 @@
+.content {
+  color: $red;
+
+  &__sectionSubtitle {
+    color: $black;
+  }
+}
+
+.member {
+  margin-left: 0;
+  margin-bottom: -1px;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+
+
+  &__logo {
+    @include size(50%, 200px);
+    display: inline-block;
+    vertical-align: middle;
+    background-position: 50px center;
+    background-repeat: no-repeat;
+    background-size: 40%;
+  }
+
+  &__description {
+    width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    font-family: $gothamBook;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000;
+    box-sizing: border-box;
+  }
+} //end member
+
+@include memberLogo(10);

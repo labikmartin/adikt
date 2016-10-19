@@ -1,6 +1,6 @@
-//output: main.html
+//output: main.html, pretty: false
 
-doctype 
+doctype
 
 html(lang="en")
   head
@@ -12,27 +12,21 @@ html(lang="en")
     link(href="styles/slick-theme.css", rel="stylesheet")
     link(href="styles/styles.css", rel="stylesheet")
 
-  body 
-  
-    // - HEADER
+  body
+
+    //- HEADER
     include ./templates/header.jade
-    
-    // - SLIDER
+
+    //- SLIDER
     include ./templates/slider.jade
-    
-    // - CONTENT
+
+    //- CONTENT
     include ./templates/content.jade
-    
 
+    //- FOOTER
+    include ./templates/footer.jade
 
-
-
-
-
-
-
-
-
-
-
-  
+    //- SCRIPTS
+    script(src="scripts/jquery-1.11.3.js")
+    script(src="scripts/slick.min.js")
+    script(src="scripts/js.js")

@@ -1,0 +1,86 @@
+//- variables
+-
+  contactOffice = {
+    "contactName": "OFFICE",
+    "address": ["Drtinova 557/8", "150 00 Praha 5", "Czech Republic"],
+    "phones": ["+420 222 710 373"],
+    "emails": ["hello@kindredgroup.com", "jobs@kindredgroup.com"]
+  }
+
+-
+  contactInvoice = {
+    "contactName": "INVOICE",
+    "address": ["KINDRED GROUP s.r.o.", "Drtinova 557/10", "150 00 Praha 5"],
+    "phones": ["IC: 01858343"],
+    "emails": []
+  }
+
+-
+  contactMedia = {
+    "contactName": "MEDIA",
+    "address": ["Michal Kříž", "PR Manager"],
+    "phones": ["+420 604 226 762"],
+    "emails": ["michal.kriz@kindredgroup.com"]
+  }
+
+- contacts = [contactOffice, contactInvoice, contactMedia]
+
+//- functions
+mixin address(contact)
+  - address = contact.address.length
+
+  - for (i = 0; i < address; i++) {
+    = contact.address[i]
+    - if (i < address-1){
+      br
+    -  }
+  - }
+
+
+mixin contactBoxes(contacts, classes)
+
+  for contact in contacts
+    - name = contact.contactName
+    - phones = contact.phones
+    - emails = contact.emails
+
+    div(class="contactBox #{classes}")
+
+      //- name
+      h2.contactBox__title.u-bold= name
+
+      //- address
+      p
+        +address(contact)
+
+      //- phones
+      for phone in phones
+        p.u-bold= phone
+      //- emails
+
+      for email in emails
+        p
+          a(href="#")= email
+
+//- html
+footer#contact.footer.u-pageSection
+  h1.footer__heading CONTACT
+  h2.footer__subtitle
+    | We integrate all the complexities of the
+    br
+    | digital world into one group.
+
+  .container
+    .row
+      +contactBoxes(contacts, "col-4 col-m-12")
+
+    .row.container
+      .social.col-6
+        h2.social__network
+          | Follow us on &nbsp;
+          span.social__logo.social__logo--fb
+
+      .social.col-6
+        h2.social__network
+          | Join us on &nbsp;
+          span.social__logo.social__logo--in

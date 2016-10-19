@@ -1,0 +1,43 @@
+// column generator
+@mixin columns($type) {
+  $columns: 12;
+  $column-width: 8.3333%;
+
+  @for $i from 1 through $columns {
+    .col#{$type}-#{$i} {
+      @if $i == $columns {
+        width: round($column-width * $i);
+      } @else {
+        width: $column-width * $i;
+      }
+    }
+  }
+}
+
+// member logo generator
+@mixin memberLogo($count) {
+  $count: $count;
+
+  @for $i from 1 through $count {
+    #logo#{$i} {background-image: url("../images/members/member#{$i}.png");}
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin center($top) {
+  margin: auto;
+  position: absolute;
+  top: $top;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin fonts($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
