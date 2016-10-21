@@ -1,18 +1,15 @@
 .content {
   color: $red;
-
   &__sectionSubtitle {
     color: $black;
   }
-}
+}//end content
 
 .member {
   margin-left: 0;
   margin-bottom: -1px;
   border-top: 1px solid $gray;
   border-bottom: 1px solid $gray;
-
-
   &__logo {
     @include size(50%, 200px);
     display: inline-block;
@@ -21,7 +18,6 @@
     background-repeat: no-repeat;
     background-size: 40%;
   }
-
   &__description {
     width: 50%;
     display: inline-block;
@@ -35,4 +31,5 @@
   }
 } //end member
 
+// LOGO GENERATOR
 @include memberLogo(10);

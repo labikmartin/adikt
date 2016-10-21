@@ -13,18 +13,15 @@ header#about.header
     h2.header__subtitle TO THE FAMILY BUSINESS
   .header__arrow
     img(src="images/arrow.png", alt="Scroll down arrow")
-
 nav.nav
   .row
     .nav__logo.col-3.col-m-6
       img(src="images/logo.png", alt="Kindred group logo")
     .col-6.hide
       +navigation("About", "Services", "Members", "Contact")
-
     .col-3.col-m-6
       .submenu
         p.submenu__label MENU
-
         .submenu__burger
           - i = 0
           while i < 3

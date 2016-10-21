@@ -1,3 +1,4 @@
+// DOCUMENT NORMALIZE
 * {
   box-sizing: border-box;
 }
@@ -10,6 +11,16 @@ body {
   @extend html;
 }
 
+footer {
+  p {
+  	line-height: 24px;
+  	padding-top: 20px;
+  	text-align: left;
+  }
+  a {color: $white;}
+}
+
+// HEADINGS NORMALIZE
 h1 {
   font-family: $gothamBold;
   font-size: 72px;
@@ -22,18 +33,7 @@ h2 {
   line-height: 44px;
 }
 
-footer {
-
-  p {
-  	line-height: 24px;
-  	padding-top: 20px;
-  	text-align: left;
-  }
-
-  a {color: $white;}
-}
-
-// ----- GRID NORMALIZE
+// GRID NORMALIZE
 .row::after {
     content: "";
     clear: both;
@@ -55,7 +55,6 @@ footer {
 // ----- SPECIAL CLASSES
 .fixed a {
   color: $red;
-
   &:hover {
     color: $black;
   }

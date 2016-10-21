@@ -2,7 +2,6 @@
 @mixin columns($type) {
   $columns: 12;
   $column-width: 8.3333%;
-
   @for $i from 1 through $columns {
     .col#{$type}-#{$i} {
       @if $i == $columns {
@@ -17,17 +16,18 @@
 // member logo generator
 @mixin memberLogo($count) {
   $count: $count;
-
   @for $i from 1 through $count {
     #logo#{$i} {background-image: url("../images/members/member#{$i}.png");}
   }
 }
 
+// width and height
 @mixin size($width, $height) {
   width: $width;
   height: $height;
 }
 
+// horizontal center
 @mixin center($top) {
   margin: auto;
   position: absolute;
@@ -37,6 +37,7 @@
   right: 0;
 }
 
+// font size and weight
 @mixin fonts($size, $weight) {
   font-size: $size;
   font-weight: $weight;

@@ -1,22 +1,21 @@
-// ------------------ DEFINITION -
-@import "sass/definition/variables";
-@import "sass/definition/functions";
-@import "sass/definition/utilities";
-@import "sass/definition/normalize";
+// DEFINITION
+@import "definition/variables";
+@import "definition/functions";
+@import "definition/utilities";
+@import "definition/normalize";
 
-// ------------------ COMPONENTS -
-@import "sass/components/header";
-@import "sass/components/slider";
-@import "sass/components/content";
-@import "sass/components/footer";
+// COMPONENTS -
+@import "components/header";
+@import "components/slider";
+@import "components/content";
+@import "components/footer";
 
 
-// ------------------ GRID -
+// GRID
 @include columns("");
 //@include columns("-m");
 
-// ------------------ FONTS
-
+// FONTS
 @font-face {
   font-family: $gothamLight;
   src: url("webfonts/gotham-light.eot");
@@ -41,27 +40,23 @@
   font-style: normal;
 }
 
-// ------------------ GLOBAL
+// GLOBAL
 
 
 
 
 
 
-// ------------------ SLIDER
+// SLIDER
 
 
-a:target {
-  transition: all 1s linear;
-}
-
-// ------------------ CONTENT
+// CONTENT
 
 
 
 
-// ------------------ FOOTER -
+// FOOTER
 
 
 
-@import "responsive";
+//@import "responsive";

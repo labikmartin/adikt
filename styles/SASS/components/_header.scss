@@ -1,4 +1,4 @@
-// ------------------ HEADER
+// HEADER
 .header {
   @extend html;
   display: table;
@@ -6,20 +6,16 @@
   background-size: cover;
   text-align: center;
   color: $white;
-
   &__welcome {
     display: table-cell;
     vertical-align: middle;
   }
-
   &__title {
     font-size: 120px;
   }
-
   &__subtitle {
     margin-top: 10px;
   }
-
   &__arrow {
     @include size(57px, 57px);
     @include center(0);
@@ -30,7 +26,7 @@
   }
 } //end header
 
-// ------------------ NAVIGATION
+// NAVIGATION
 .nav {
   width: 100%;
   position: fixed;
@@ -38,23 +34,19 @@
   text-align: left;
   color: $white;
   z-index: 999;
-
   &__logo {
     font-family: $gothamBold;
     font-size: 18px;
   }
-
   &__menu {
     font-family: $gothamBook;
     font-size: 18px;
     text-align: center;
   }
-
   &__item {
     padding: 0 20px;
     display: inline;
   }
-
   &__anchor {
     text-decoration: none;
     color: $white;
@@ -65,11 +57,9 @@
   float: right;
   font-family: $gothamBook;
   font-size: 18px;
-
   &__burger {
     display: inline-block;
   }
-
   &__line {
     @include size(20px, 3px);
     margin-bottom: 3px;
@@ -77,9 +67,8 @@
     display: block;
     background-color: $white;
   }
-
   &__label {
     display: inline-block;
     vertical-align: top;
   }
-}
+} //end submenu

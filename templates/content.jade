@@ -1,20 +1,21 @@
 //- variables
-- member1 = {"description": "Communication<br>&amp; Business Strategy"}
-- member2 = {"description": "Digital Content <br>Production"}
-- member3 = {"description": "Social Media &amp; PR <br>Communication Agency"}
-- member4 = {"description": "Production<br>&amp; Postproduction"}
-- member5 = {"description": "BrainStation<br>Description"}
-- member6 = {"description": "Media &amp; Strategy <br>Planning"}
-- member7 = {"description": "Mobile &amp; Web<br>Development"}
-- member8 = {"description": "Events<br>&amp; Sponzoring"}
-- member9 = {"description": "Communication<br>Agency"}
-- member10 = {"description": "Communication<br>Agency"}
-
-- members = [member1, member2, member3, member4, member5, member6, member7, member8, member9, member10]
+-
+  var members = [
+    member1 = {"description": "Communication<br>&amp; Business Strategy"},
+    member2 = {"description": "Digital Content <br>Production"},
+    member3 = {"description": "Social Media &amp; PR <br>Communication Agency"},
+    member4 = {"description": "Production<br>&amp; Postproduction"},
+    member5 = {"description": "BrainStation<br>Description"},
+    member6 = {"description": "Media &amp; Strategy <br>Planning"},
+    member7 = {"description": "Mobile &amp; Web<br>Development"},
+    member8 = {"description": "Events<br>&amp; Sponzoring"},
+    member9 = {"description": "Communication<br>Agency"},
+    member10 = {"description": "Communication<br>Agency"}
+  ]
 
 //- functions
 mixin makeMembers(offset, limit)
-  - for(i = offset; i < limit; i++) {
+  - for (i = offset; i < limit; i++) {
     .member
       div(id="logo#{i+1}", class="member__logo" )
       .member__description!= members[i].description
@@ -30,10 +31,8 @@ section#members.content.u-pageSection
           | And we are really proud to have
           br
           | them in our special family
-
     .row
       .col-6.col-s-12
         +makeMembers(0, 5)
-
       .col-6.col-s-12
         +makeMembers(5, 10)

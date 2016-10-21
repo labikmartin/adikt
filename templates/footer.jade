@@ -28,7 +28,6 @@
 //- functions
 mixin address(contact)
   - address = contact.address.length
-
   - for (i = 0; i < address; i++) {
     = contact.address[i]
     - if (i < address-1){
@@ -36,28 +35,21 @@ mixin address(contact)
     -  }
   - }
 
-
 mixin contactBoxes(contacts, classes)
-
   for contact in contacts
     - name = contact.contactName
     - phones = contact.phones
     - emails = contact.emails
-
     div(class="contactBox #{classes}")
-
       //- name
       h2.contactBox__title.u-bold= name
-
       //- address
       p
         +address(contact)
-
       //- phones
       for phone in phones
         p.u-bold= phone
       //- emails
-
       for email in emails
         p
           a(href="#")= email
@@ -69,17 +61,14 @@ footer#contact.footer.u-pageSection
     | We integrate all the complexities of the
     br
     | digital world into one group.
-
   .container
     .row
       +contactBoxes(contacts, "col-4 col-m-12")
-
     .row.container
       .social.col-6
         h2.social__network
           | Follow us on &nbsp;
           span.social__logo.social__logo--fb
-
       .social.col-6
         h2.social__network
           | Join us on &nbsp;

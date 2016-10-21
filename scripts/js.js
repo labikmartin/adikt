@@ -23,31 +23,25 @@ $(function() {
       gray =    '#e5e5e5',
       black =   '#000';
 
-
   /////////////////////////////////////////// UTILITY FUNCTIONS
   //make array of multiple elements
   function u_arrayElems() {
     var elements = [],
         args =     arguments,
         splitArr;
-
     for (i = 0; i < args.length; i++) {
       splitArr = args[i];
-
       var a = 0;
-
       while ( a < args[i].length) {
-        elements.push(splitArr[a]);
+        elements
+          .push(splitArr[a]);
         a++;
       }
-
     }
-
     return elements;
-  }
+  };
 
 /////////////////////////////////////////// FUNCTIONS
-
 // -- scroll animation
 function scroll(toElement, speed) {
   var windowObject =  window,
@@ -56,79 +50,73 @@ function scroll(toElement, speed) {
       pointer =       (toElement.hasAttribute('href')) ? toElement.getAttribute('href').slice(1) : null,
       elem =          (pointer !== null) ? document.getElementById(pointer) : services,
       elemOffset =    elem.offsetTop;
-
-    var counter = setInterval(function() {
-      windowPos;
-
-      if (windowPos > elemOffset) { //bottom to top
-        windowObject.scrollTo(0, windowPos);
-        windowPos-=speed;
-
-        if (windowPos <= elemOffset) { //cancel scrolling
-          clearInterval(counter);
-          windowObject.scrollTo(0, elemOffset);
-        }
-      } else { //top to bottom
-        windowObject.scrollTo(0, windowPos);
-        windowPos+=speed;
-
-        if (windowPos >= elemOffset) { // cancel scrolling
-          clearInterval(counter);
-          windowObject.scrollTo(0, elemOffset);
-        }
+  var counter = setInterval(function() {
+    windowPos;
+    if (windowPos > elemOffset) { //bottom to top
+      windowObject
+        .scrollTo(0, windowPos);
+      windowPos-=speed;
+      if (windowPos <= elemOffset) { //cancel scrolling
+        clearInterval(counter);
+        windowObject
+          .scrollTo(0, elemOffset);
       }
-
-    }, 1);
-}
-
+    } else { //top to bottom
+      windowObject
+        .scrollTo(0, windowPos);
+      windowPos+=speed;
+      if (windowPos >= elemOffset) { // cancel scrolling
+        clearInterval(counter);
+        windowObject
+          .scrollTo(0, elemOffset);
+      }
+    }
+  }, 1);
+};
 
 // -- navbar switcher
 function navbarSwitch() {
-
   if (windowObject.pageYOffset >= services.offsetTop) {
-    navbar.setAttribute('style',  'background-color:' + white +';'+
-                                  'color:' + red +';'+
-                                  'border-bottom: solid 1px ' + gray);
-
+    navbar
+      .setAttribute('style',  'background-color:' + white +';'+
+                              'color:' + red +';'+
+                              'border-bottom: solid 1px ' + gray);
     for (i = 0; i < navPointer.length; i++) {
-      navPointer[i].setAttribute('style', 'color:' + red + ';');
+      navPointer[i]
+        .setAttribute('style', 'color:' + red + ';');
     }
-
     for (i = 0; i < submenuLine.length; i++) {
-      submenuLine[i].setAttribute('style', 'background-color:' + red +';');
+      submenuLine[i]
+        .setAttribute('style', 'background-color:' + red +';');
     }
-
   }
-
   else {
-
-    navbar.removeAttribute('style');
-
+    navbar
+      .removeAttribute('style');
     var elements = u_arrayElems(navPointer, submenuLine);
-
     for (i = 0; i < elements.length; i++) {
-      elements[i].removeAttribute('style');
+      elements[i]
+        .removeAttribute('style');
     }
   }
-}
+};
 
 /////////////////////////////////////////// PAGE SCROLL
-
   arrow[0].addEventListener('click', function() {
     scroll(this, 18);
   });
 
   for (i = 0; i < navPointer.length; i++) {
-    navPointer[i].addEventListener('click', function(e) {
-      scroll(this, 18);
-      e.preventDefault();
-    });
-  }
-
+    navPointer[i]
+      .addEventListener('click', function(e) {
+        scroll(this, 18);
+        e.preventDefault();
+      });
+  };
 
 /////////////////////////////////////////// NAVBAR FUNCTIONALITY
-
 windowObject.addEventListener('load', navbarSwitch);
+
 windowObject.addEventListener('scroll', navbarSwitch);
 
 /*
