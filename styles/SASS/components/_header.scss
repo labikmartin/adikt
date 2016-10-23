@@ -2,7 +2,7 @@
 .header {
   @extend html;
   display: table;
-  background: url("../images/header-bg.jpg") no-repeat center;
+  background: url('../images/header-bg.jpg') no-repeat center;
   background-size: cover;
   text-align: center;
   color: $white;
@@ -19,6 +19,7 @@
   &__arrow {
     @include size(57px, 57px);
     @include center(0);
+    @include transition(scale .3s linear);
     margin-bottom: 60px;
     display: table-cell;
     vertical-align: bottom;
@@ -27,6 +28,7 @@
 } //end header
 
 // NAVIGATION
+//header version
 .nav {
   width: 100%;
   position: fixed;
@@ -50,6 +52,9 @@
   &__anchor {
     text-decoration: none;
     color: $white;
+    &:hover {
+      color: $red;
+    }
   }
 } // end nav
 
@@ -72,3 +77,23 @@
     vertical-align: top;
   }
 } //end submenu
+
+// navigation fixed
+.navFixed {
+  .nav {
+    border-bottom: 1px solid $lightGray;
+    background-color: $white;
+    &__anchor {
+      color: $red;
+    }
+    &__anchor:hover {
+      color: $black;
+    }
+  }
+  .submenu {
+    color: $red;
+    &__line {
+      background-color: $red;
+    }
+  }
+}//end navFixed

@@ -17,7 +17,7 @@
 @mixin memberLogo($count) {
   $count: $count;
   @for $i from 1 through $count {
-    #logo#{$i} {background-image: url("../images/members/member#{$i}.png");}
+    #logo#{$i} {background-image: url('../images/members/member#{$i}.png');}
   }
 }
 
@@ -41,4 +41,21 @@
 @mixin fonts($size, $weight) {
   font-size: $size;
   font-weight: $weight;
+}
+
+// transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+// transition
+@mixin transition($transitions) {
+  -moz-transition: $transitions;
+  -o-transition: $transitions;
+  -webkit-transition: $transitions;
+  transition: $transitions;
 }

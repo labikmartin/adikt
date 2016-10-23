@@ -13,9 +13,9 @@ body {
 
 footer {
   p {
-  	line-height: 24px;
-  	padding-top: 20px;
-  	text-align: left;
+    line-height: 24px;
+    padding-top: 20px;
+    text-align: left;
   }
   a {color: $white;}
 }
@@ -35,9 +35,9 @@ h2 {
 
 // GRID NORMALIZE
 .row::after {
-    content: "";
-    clear: both;
-    display: block;
+  content: "";
+  clear: both;
+  display: block;
 }
 
 [class*="col-"] {
