@@ -24,6 +24,9 @@ footer {
 h1 {
   font-family: $gothamBold;
   font-size: 72px;
+  @media #{$maxW-660} {
+    font-size: 32px;
+  }
 }
 
 h2 {
@@ -31,16 +34,19 @@ h2 {
   font-family: $gothamLight;
   font-size: 36px;
   line-height: 44px;
+  @media #{$maxW-660} {
+    font-size: 25px;
+  }
 }
 
 // GRID NORMALIZE
 .row::after {
-  content: "";
+  content: '';
   clear: both;
   display: block;
 }
 
-[class*="col-"] {
+[class*='col-'] {
   padding: 40px;
   float: left;
 }

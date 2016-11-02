@@ -1,8 +1,15 @@
 .u-pageSection {
   width: 100%;
   padding-top: 80px;
+  @media #{$maxW-660} {
+    padding-top: 40px;
+  }
 }
 
 .u-bold {
   font-family: $gothamBold;
+}
+
+.u-hide {
+  display: none;
 }

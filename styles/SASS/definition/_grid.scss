@@ -1,0 +1,27 @@
+@include columns('');
+
+@media #{$maxW-1080} {
+  @include columns('-1080');
+}
+
+@media #{$maxW-660} {
+  @include columns('-660');
+}
+
+@media #{$maxW-560} {
+  @include columns('-560');
+}
+
+[class*='col-'] {
+  @media #{$maxW-1080} {
+    padding: 10px;
+  }
+}
+
+.nav {
+  .col-3, .col-6 {
+    @media #{$maxW-1080} {
+      padding: 30px 10px;
+    }
+  }
+}

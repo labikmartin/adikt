@@ -1,7 +1,12 @@
 $(function() {
 
+// -------------- COMMENTS LEGEND
+  /////////////////////////////////////////// === CATEGORY
+  // -- === category item
+  // === note
+
 /////////////////////////////////////////// VARIABLES
-// elements definition
+// -- elements definition
   var windowObject =    window,
       html =            document.querySelectorAll('html, body'),
       services =        document.getElementById('services'),
@@ -17,14 +22,14 @@ $(function() {
       documentHeight,
       offsets = [];
 
-// lengths
+// -- lengths
   var pageSectionsLength =  pageSections.length,
-      navPointerLength =     navPointer.length;
+      navPointerLength =    navPointer.length;
 
-//properties
+// -- properties
   var screenSize = windowObject.offsetHeight;
 
-//colors
+// -- colors
   var white =   '#fff',
       red =     '#e30613',
       darkRed = '#cc0511',
@@ -32,7 +37,7 @@ $(function() {
       black =   '#000';
 
   /////////////////////////////////////////// UTILITY FUNCTIONS
-  // add class
+  // -- add class
   function u_addClass(elem, classes) {
     var classList = elem.className;
     var update = classList + ' ' + classes;
@@ -44,7 +49,7 @@ $(function() {
     else { return false; }
   }
 
-  //remove class
+  // -- remove class
   function u_removeClass(elem, classes) {
     var matchPattern = new RegExp('\\s?' + classes, 'g');
     var classList = elem.className;
@@ -70,7 +75,7 @@ $(function() {
         windowObject
           .scrollTo(0, windowPos);
         windowPos-=speed;
-        if (windowPos <= elemOffset) { //cancel scrolling
+        if (windowPos <= elemOffset) { // cancel scrolling
           clearInterval(counter);
           windowObject
             .scrollTo(0, elemOffset+1);
@@ -85,16 +90,18 @@ $(function() {
             .scrollTo(0, elemOffset+2);
         }
       }
-    }, 1);
+    }, 15);
   }
 
-  //make array of multiple elements
+  // -- make array of multiple elements
   function u_arrayElems() {
     var elements = [],
         args =     arguments,
         splitArr;
+    // iterate through returned object and extract selector lists
     for (i = 0; i < args.length; i++) {
       splitArr = args[i];
+      // iterate through each extracted list and place its items into 1 array
       var a = 0;
       while ( a < args[i].length) {
         elements
@@ -105,7 +112,7 @@ $(function() {
     return elements;
   }
 
-  //test value of attribute
+  // -- test value of attribute
   function u_testAttrVal(selector, attr, val) {
     var element = document.querySelector(selector);
     var attribute = element.getAttribute(attr);
@@ -119,6 +126,7 @@ $(function() {
 function navbarSwitch(offsets, documentHeight) {
   var imgSource,
       windowOffset = this.pageYOffset,
+      lastSection = pageSections[pageSectionsLength-1].offsetTop < windowOffset,
       bottomSection =   window.innerHeight + windowOffset;
   // change navbar item color according to current window section
   for (i = 0; i < pageSectionsLength; i++) {
@@ -133,7 +141,7 @@ function navbarSwitch(offsets, documentHeight) {
           .style.color = black;
       }
     // fix for bottom section
-    } else if (documentHeight === bottomSection) {
+  } else if (documentHeight === bottomSection || lastSection) {
       navPointer[navPointerLength-2]
         .removeAttribute('style');
       navPointer[navPointerLength-1]
@@ -143,7 +151,7 @@ function navbarSwitch(offsets, documentHeight) {
         .removeAttribute('style');
     }
   }
-  // switch
+  // -- style switch
   if (windowObject.pageYOffset >= services.offsetTop) {
     imgSource = 'images/logo-red.png';
     u_addClass(navFixed, 'navFixed');
@@ -172,13 +180,13 @@ var arrowAnim = setInterval(function() {
 
 /////////////////////////////////////////// PAGE SCROLL
   arrow.addEventListener('click', function() {
-    u_scroll(this, 18);
+    u_scroll(this, 48);
   });
 
   for (i = 0; i < navPointer.length; i++) {
     navPointer[i]
       .addEventListener('click', function(e) {
-        u_scroll(this, 18);
+        u_scroll(this, 48);
         e.preventDefault();
       });
   }
@@ -201,6 +209,7 @@ windowObject.addEventListener('scroll', function() {
   navbarSwitch(offsets, documentHeight);
 });
 
+/////////////////////////////////////////// JQUERY
 /////////////////////////////////////////// SLICK
 
   $('.slick').slick({

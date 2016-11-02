@@ -12,6 +12,9 @@
   }
   &__title {
     font-size: 120px;
+    @media #{$maxW-660} {
+      font-size: 48px;
+    }
   }
   &__subtitle {
     margin-top: 10px;
@@ -48,12 +51,21 @@
   &__item {
     padding: 0 20px;
     display: inline;
+    @media #{$maxW-1080} {
+      display: block;
+      padding: 3px 0;
+    }
   }
   &__anchor {
     text-decoration: none;
     color: $white;
     &:hover {
       color: $red;
+    }
+  }
+  &__hide {
+    @media #{$maxW-1080} {
+      display: none;
     }
   }
 } // end nav
@@ -75,6 +87,9 @@
   &__label {
     display: inline-block;
     vertical-align: top;
+    @media #{$maxW-1080} {
+      display: none;
+    }
   }
 } //end submenu
 

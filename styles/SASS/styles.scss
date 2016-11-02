@@ -1,62 +1,38 @@
+
 // DEFINITION
-@import "definition/variables";
-@import "definition/functions";
-@import "definition/utilities";
-@import "definition/normalize";
-
-// COMPONENTS -
-@import "components/header";
-@import "components/slider";
-@import "components/content";
-@import "components/footer";
-
-
-// GRID
-@include columns("");
-//@include columns("-m");
+@import 'definition/variables';
+@import 'definition/functions';
+@import 'definition/utilities';
+@import 'definition/normalize';
+@import 'definition/grid';
 
 // FONTS
 @font-face {
   font-family: $gothamLight;
-  src: url("webfonts/gotham-light.eot");
-  src: url("webfonts/gotham-light.eot") format("embedded-opentype"), url("webfonts/gotham-light.woff") format("woff"), url("webfonts/gotham-light.ttf") format("truetype"), url("webfonts/gotham-light.svg#GothamLight") format("svg");
+  src: url('webfonts/gotham-light.eot');
+  src: url('webfonts/gotham-light.eot') format('embedded-opentype'), url('webfonts/gotham-light.woff') format('woff'), url('webfonts/gotham-light.ttf') format('truetype'), url('webfonts/gotham-light.svg#GothamLight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: $gothamBold;
-  src: url("webfonts/gothabol-webfont.eot");
-  src: url("webfonts/gothabol-webfont.eot?#iefix") format("embedded-opentype"), url("webfonts/gothabol-webfont.woff") format("woff"), url("webfonts/gothabol-webfont.ttf") format("truetype"), url("webfonts/gothabol-webfont.svg#gothamboldcebold") format("svg");
+  src: url('webfonts/gothabol-webfont.eot');
+  src: url('webfonts/gothabol-webfont.eot?#iefix') format('embedded-opentype'), url('webfonts/gothabol-webfont.woff') format('woff'), url('webfonts/gothabol-webfont.ttf') format('truetype'), url('webfonts/gothabol-webfont.svg#gothamboldcebold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: $gothamBook;
-  src: url("webfonts/gothaboo-webfont.eot");
-  src: url("webfonts/gothaboo-webfont.eot?#iefix") format("embedded-opentype"), url("webfonts/gothaboo-webfont.woff") format("woff"), url("webfonts/gothaboo-webfont.ttf") format("truetype"), url("webfonts/gothaboo-webfont.svg#gothambookcebook") format("svg");
+  src: url('webfonts/gothaboo-webfont.eot');
+  src: url('webfonts/gothaboo-webfont.eot?#iefix') format('embedded-opentype'), url('webfonts/gothaboo-webfont.woff') format('woff'), url('webfonts/gothaboo-webfont.ttf') format('truetype'), url('webfonts/gothaboo-webfont.svg#gothambookcebook') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-// GLOBAL
-
-
-
-
-
-
-// SLIDER
-
-
-// CONTENT
-
-
-
-
-// FOOTER
-
-
-
-//@import "responsive";
+// COMPONENTS
+@import 'components/header';
+@import 'components/slider';
+@import 'components/content';
+@import 'components/footer';

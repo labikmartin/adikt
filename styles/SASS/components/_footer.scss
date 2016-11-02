@@ -6,11 +6,22 @@
   text-align: center;
   background-color: $red;
   color: $white;
+  @media #{$maxW-560} {
+    font-size: 14px;
+  }
   &__heading {
     padding-top: 40px;
   }
   &__subtitle {
     padding-bottom: 40px;
+    @media #{$maxW-1080} {
+      padding-bottom: 20px;
+    }
+  }
+  .contactBox__title, p {
+    @media #{$maxW-1080} {
+      text-align: center;
+    }
   }
 } //end footer
 
@@ -19,6 +30,15 @@
     font-size: 36px;
     padding: 0;
     text-align: left;
+    @media #{$maxW-1080} {
+      padding-top: 40px;
+    }
+    @media #{$maxW-660} {
+      font-size: 28px;
+    }
+    @media #{$maxW-560} {
+      font-size: 25px;
+    }
   }
 }//end contentBox
 
@@ -36,7 +56,7 @@
   }
   &__logo {
     display: inline-block;
-    background: url("../images/social.png") no-repeat;
+    background: url('../images/social.png') no-repeat;
     &--fb {
       @include size(12px, 25px);
     }
